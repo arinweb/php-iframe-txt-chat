@@ -1,9 +1,9 @@
 <?php
 $fileName = "chat.txt";
+if (!file_exists($fileName)) {
+  touch($fileName);
+}
 if ($_POST) {
-  if (!file_exists($fileName)) {
-    touch($fileName);
-  }
   $deger = "\n".$_POST['yazi'];
   $ac = @fopen($fileName, "a");
   fwrite($ac, $deger);
